@@ -23,7 +23,7 @@ namespace CoreAuth.IdentityServer
                 //1. Which Api Can use this Authorization Server
                 //2. Which Client Authozired to use ID4
                 //3. Which Users Authorized to Use ID4
-                .AddSigningCredential(new X509Certificate2(@"d:\CoreAuth\CoreAuth2\identityserver.pfx","Wind123456"))
+                .AddSigningCredential(new X509Certificate2(@"d:\CoreAuth\CoreAuth2\CoreAuth.IdentityServer\identityserver.pfx", "Wind123456"))
                 .AddTestUsers(InMemoryConfiguration.Users().ToList())
                 .AddInMemoryClients(InMemoryConfiguration.Clients())
                 .AddInMemoryApiResources(InMemoryConfiguration.ApiResources());
