@@ -1,0 +1,19 @@
+
+Command 1:
+
+openssl req -newkey rsa:2048 -nodes -keyout identityserver.key -x509 -days 365 -out identityserver.cer
+
+(in Case of Issue do following:
+
+For me setting up this environment variable worked. Restart didn't.
+
+set OPENSSL_CONF=c:/libs/openssl-0.9.8k/openssl.cnf
+
+)
+
+Command 2: Generate PFX File
+D:\CoreAuth\CoreAuth2>
+
+openssl pkcs12 -export -in identityserver.cer -inkey identityserver.key -out identityserver.pfx
+
+
