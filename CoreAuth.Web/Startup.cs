@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace CoreAuth.Web
 {
@@ -23,6 +24,8 @@ namespace CoreAuth.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+
             services.AddAuthentication(auth =>
             {
                 auth.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -35,6 +38,7 @@ namespace CoreAuth.Web
                 options.SaveTokens = true;
                 options.TokenValidationParameters.NameClaimType = "name";
                 options.RequireHttpsMetadata = false;
+                options.ResponseType = "id_token token";
             })
             .AddCookie();
 
