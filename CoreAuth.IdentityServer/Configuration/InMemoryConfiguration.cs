@@ -4,6 +4,7 @@ using IdentityServer4.Test;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace CoreAuth.Configuration
@@ -21,7 +22,8 @@ namespace CoreAuth.Configuration
         {
             return new IdentityResource[] {
                 new IdentityResources.OpenId(),
-                new IdentityResources.Profile()
+                new IdentityResources.Profile(),
+                new IdentityResources.Email()
             };
         }
 
@@ -72,8 +74,9 @@ namespace CoreAuth.Configuration
                 new TestUser
                 {
                     SubjectId = "1",
-                    Username = "mail@filipekberg.se",
-                    Password = "password"
+                    Username = "sam@antargyan.com",
+                    Password = "password",
+                    Claims = new [] { new Claim("email", "sam@antargyan.com") }
                 }
             };
         }
