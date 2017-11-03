@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAuth.IdentityServer", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAuth.Api", "CoreAuth.Api\CoreAuth.Api.csproj", "{8440F07A-A134-44EC-912D-BF264C500E53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAuth.Web", "CoreAuth.Web\CoreAuth.Web.csproj", "{FD8C9673-D46A-42CF-86C8-FC2ADF4BCCDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAuth.Web", "CoreAuth.Web\CoreAuth.Web.csproj", "{FD8C9673-D46A-42CF-86C8-FC2ADF4BCCDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
