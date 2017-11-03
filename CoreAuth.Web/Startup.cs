@@ -33,12 +33,16 @@ namespace CoreAuth.Web
                 auth.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
             })
             .AddOpenIdConnect(options => {
-                options.ClientId = "socialnetwork_implicit";
+                options.ClientId = "socialnetwork_code";
+                options.ClientSecret = "secret";
                 options.Authority = "http://localhost:26421";
                 options.SaveTokens = true;
                 options.TokenValidationParameters.NameClaimType = "name";
                 options.RequireHttpsMetadata = false;
-                options.ResponseType = "id_token token";
+                options.ResponseType = "id_token code";
+                options.Scope.Add("socialnetwork");
+                options.Scope.Add("offline_access");
+                options.GetClaimsFromUserInfoEndpoint = true;
             })
             .AddCookie();
 
