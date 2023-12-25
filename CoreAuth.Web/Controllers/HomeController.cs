@@ -45,7 +45,7 @@ namespace CoreAuth.Web.Controllers
 
         public async Task<IActionResult> Shouts()
         {
-            await RefreshTokensAync();
+            await RefreshTokensAsync();
 
             var token = await AuthenticationHttpContextExtensions.GetTokenAsync(this.HttpContext, "access_token");
 
@@ -56,7 +56,7 @@ namespace CoreAuth.Web.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        private async Task RefreshTokensAync()
+        private async Task RefreshTokensAsync()
         {
             var authorizatinServerInformation =
                 await DiscoveryClient.GetAsync("http://localhost:26421");
